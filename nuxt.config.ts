@@ -6,17 +6,8 @@ export default defineNuxtConfig({
 		preset: process.env.NITRO_PRESET || "node",
 	},
 
-	modules: ["@nuxt/fonts", "@nuxt/devtools", "@nuxt/ui", "@nuxt/icon", "nuxt-delay-hydration"],
-
-	vite: {
-		css: {
-			preprocessorOptions: {
-				scss: {
-					api: "modern-compiler",
-				},
-			},
-		},
-	},
+	modules: ["@nuxt/ui", "nuxt-delay-hydration"],
+	css: ["~/assets/css/main.css"],
 
 	runtimeConfig: {
 		public: {},
