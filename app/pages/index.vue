@@ -73,13 +73,20 @@ const projects = ref<Project[]>([
   },
   {
     title: "Butler",
-    description:
-      "Butler is a digital ecosystem that offers multiple solutions and new possibilities to mass catering stores",
+    description: "Butler is a digital ecosystem that offers multiple solutions and new possibilities to mass catering stores",
     textColor: "text-sky-950",
     bgColor: "bg-sky-400",
     link: "butler.gr",
     tags: ["Website", "Business"],
   },
+  {
+    title: "VTube Center",
+    description: "Connect with VTubers - Catch up with events, collabs and grow your fanbase",
+    textColor: "text-project-vtubecenter",
+    bgColor: "bg-project-vtubecenter",
+    link: "",
+    tags: ["Website"]
+  }
 ]);
 
 const age = computed(() => {

@@ -14,19 +14,20 @@
 	--color-slate-900: oklch(0.174 0.01 276.37);
 	--color-slate-950: oklch(0.141 0.007 285.56);
 
-	--color-project-galaxy: #B24193;
-	--color-project-meteora: #00A4B4;
-	--color-project-aura: #FA1459;
-	--color-project-pagoexpress: #3F61A2;
-	--color-project-butler: blue;
+	--color-project-galaxy: oklch(0.5582 0.173 340.08);
+	--color-project-meteora: oklch(0.6568 0.1126 207.03);
+	--color-project-aura: oklch(0.631 0.246 14.42);
+	--color-project-pagoexpress: oklch(0.4989 0.1115 262.24);
+	--color-project-butler: oklch(0.6674 0.1751 251.46);
+	--color-project-vtubecenter: oklch(0.5305 0.1038 264.17);
 
-	--color-social-twitter: #1D9BF0;
-	--color-social-discord: #5865F2;
-	--color-social-kofi: #ff5f5f;
-	--color-social-telegram: #31a4df;
-	--color-social-nuxt: #00DC82;
-	--color-social-iconify: #03a7f1;
-	--color-social-jetbrains: #FE2857;
+	--color-social-twitter: oklch(0.6671 0.1615 245.54);
+	--color-social-discord: oklch(0.5774 0.2091 273.85);
+	--color-social-kofi: oklch(0.6949 0.1953 23.69);
+	--color-social-telegram: oklch(0.6822 0.1315 236.39);
+	--color-social-nuxt: oklch(0.7862 0.192 155.63);
+	--color-social-iconify: oklch(0.6929 0.1554 238.93);
+	--color-social-jetbrains: oklch(0.6456 0.2404 16.75);
 
 	--container-8xl: 88rem;
 	--container-9xl: 96rem;
