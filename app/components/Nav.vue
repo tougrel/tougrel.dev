@@ -42,7 +42,7 @@ const routes: NavigationMenuItem[] = [
 		target: "_blank",
 	},
 	{
-		label: "Credits",
+		label: "Attributions",
 		icon: "line-md:heart",
 		onClick: () => {
 			credits.value = true;
