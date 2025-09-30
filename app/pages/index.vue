@@ -58,8 +58,8 @@ const projects = ref<Project[]>([
   {
     title: "PagoExpress",
     description: "PagoExpress is an ice supplier company based in Chania, Crete",
-    textColor: "text-white",
-    bgColor: "bg-project-pagoexpress",
+    textColor: "text-blue-950",
+    bgColor: "bg-blue-400",
     link: "pagoexpress.gr",
     tags: ["Website", "Ice"],
   },
@@ -82,8 +82,8 @@ const projects = ref<Project[]>([
   {
     title: "VTube Center",
     description: "Connect with VTubers - Catch up with events, collabs and grow your fanbase",
-    textColor: "text-project-vtubecenter",
-    bgColor: "bg-project-vtubecenter",
+    textColor: "text-rose-950",
+    bgColor: "bg-rose-400",
     link: "vtube.center",
     tags: ["Website"]
   }
