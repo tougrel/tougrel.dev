@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+	--color-slate-50: oklch(0.958 0.004 271.53);
+	--color-slate-100: oklch(0.91 0.008 271.4);
+	--color-slate-200: oklch(0.824 0.019 272.3);
+	--color-slate-300: oklch(0.73 0.028 271.76);
+	--color-slate-400: oklch(0.632 0.04 270.19);
+	--color-slate-500: oklch(0.542 0.047 271.34);
+	--color-slate-600: oklch(0.451 0.036 268.62);
+	--color-slate-700: oklch(0.362 0.029 271.36);
+	--color-slate-800: oklch(0.257 0.018 270.66);
+	--color-slate-900: oklch(0.174 0.01 276.37);
+	--color-slate-950: oklch(0.141 0.007 285.56);
+
+	--color-project-aura: oklch(0.631 0.246 14.42);
+	--color-social-twitter: oklch(0.6671 0.1615 245.54);
+	--color-social-discord: oklch(0.5774 0.2091 273.85);
+	--color-social-kofi: oklch(0.6949 0.1953 23.69);
+	--color-social-telegram: oklch(0.6822 0.1315 236.39);
+	--color-social-nuxt: oklch(0.7862 0.192 155.63);
+	--color-social-iconify: oklch(0.6929 0.1554 238.93);
+	--color-social-jetbrains: oklch(0.6456 0.2404 16.75);
+
+	--container-8xl: 88rem;
+	--container-9xl: 96rem;
+
+	@keyframes animateGradientBackground {
+		0%, 100% {
+			background-position: 0 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+}
+
+:root {
+	--ui-container: var(--container-9xl);
+}
+
+html, body {
+	position: relative;
+	background-color: var(--ui-bg);
+	color: var(--ui-text);
+	font-family: "JetBrains Mono", monospace, sans-serif;
+}
