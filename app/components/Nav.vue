@@ -2,7 +2,7 @@
 	<UHeader mode="drawer" class="flex items-center justify-between p-4">
 		<template #left>
 			<ULink to="/">
-				<NuxtImg src="/logo.svg" width="128" height="128" class="w-32" />
+				<UColorModeImage light="/logo_black.svg" dark="/logo.svg" alt="Tougrel" loading="lazy" width="128" height="128" preload class="w-32" />
 			</ULink>
 		</template>
 
