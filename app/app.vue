@@ -1,22 +1,22 @@
 <script setup lang="ts">
 useSeoMeta({
-	title: "Tougrel",
-	titleTemplate: "%s - Tougrel",
-	description: "Personal blog and portfolio",
+	title: "Tougrel – From Middle-earth to the Web",
+	titleTemplate: "%s - Portfolio & Projects",
+	description: "Portfolio and personal site of Lampros 'Tougrel' Sagris, a fullstack developer from Greece. Explore projects, coding experiments, and creative works crafted with the precision of dwarves, the elegance of elves, and the curiosity of hobbits!",
 
-	author: 'Sagris "Tougrel" Lampros',
-	publisher: "Tougrel",
+	author: "Lampros 'Tougrel' Sagris",
+	publisher: "Lampros 'Tougrel' Sagris",
 
 	themeColor: "#5946CE",
 	msapplicationTileColor: "#333743",
 
-	ogTitle: "Tougrel",
-	ogDescription: "Personal blog and portfolio",
+	ogTitle: "Tougrel – From Middle-earth to the Web",
+	ogDescription: "Portfolio and personal site of Lampros 'Tougrel' Sagris, a fullstack developer from Greece. Explore projects, coding experiments, and creative works crafted with the precision of dwarves, the elegance of elves, and the curiosity of hobbits!",
 	ogType: "website",
 	ogUrl: "https://tougrel.dev",
 
-	twitterTitle: "Tougrel",
-	twitterDescription: "Personal blog and portfolio",
+	twitterTitle: "Tougrel – From Middle-earth to the Web",
+	twitterDescription: "Portfolio and personal site of Lampros 'Tougrel' Sagris, a fullstack developer from Greece. Explore projects, coding experiments, and creative works crafted with the precision of dwarves, the elegance of elves, and the curiosity of hobbits!",
 	twitterCard: "summary",
 });
 
