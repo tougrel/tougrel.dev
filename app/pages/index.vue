@@ -84,7 +84,7 @@ const projects = ref<Project[]>([
     description: "Connect with VTubers - Catch up with events, collabs and grow your fanbase",
     textColor: "text-project-vtubecenter",
     bgColor: "bg-project-vtubecenter",
-    link: "",
+    link: "vtube.center",
     tags: ["Website"]
   }
 ]);
