@@ -1,9 +1,9 @@
-import pkg from "~/package.json";
-
 export default defineEventHandler(() => {
+	const runtimeConfig = useRuntimeConfig();
+
 	return {
-		name: pkg.name,
-		version: pkg.version,
-		build: pkg.build,
+		name: runtimeConfig.public.clientName,
+		version: runtimeConfig.public.clientVersion,
+		build: runtimeConfig.public.clientBuild,
 	};
 });

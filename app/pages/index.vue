@@ -1,99 +1,108 @@
+<template>
+  <UPage>
+    <UPageHero title="🌍 From Middle Earth to Code ✨" headline='Lampros "Tougrel" Sagris'>
+      <template #description>
+        I’m Lampros or Tougrel (<span class="text-primary italic">{{ age || "23" }} years old</span>) and I’m from
+        Greece. I love programming, gaming, anime and I’m a big fan of J. R. R Tolkien’s work. I'm a fullstack
+        engineer but I spend a lot of time on frontend development! I enjoy creating modern, clean and interactive interfaces,
+        usually with Vue and TypeScript and I'm always trying new tools or create projects that never see the light of day just to
+        experiment. I’m currently working on some projects that you can find below!
+      </template>
+    </UPageHero>
+
+    <UPageSection title="My Projects" description="Check at what I'm currently working on and their current status!">
+      <UPageGrid>
+        <div v-for="(project, index) in projects" :key="`project-${index}`"
+          class="flex flex-col gap-4 relative ring-2 ring-default rounded-lg p-8 overflow-hidden">
+          <div class="absolute top-0 left-0 w-12 h-12 blur-3xl" :class="project.bgColor" />
+          <div class="flex flex-col gap-1">
+            <h2 class="text-2xl text-white-full font-bold">{{ project.title }}</h2>
+            <ULink :to="`https://${project.link}`" target="_blank" external class="flex items-center gap-1 text-sm">
+              <Icon name="line-md:external-link" size=".8em" class="text-muted" />
+              {{ project.link }}
+            </ULink>
+          </div>
+          <USeparator size="md" decorative />
+          <p class="text-sm text-muted overflow-y-auto">{{ project.description }}</p>
+          <div class="flex items-center gap-2 mt-auto">
+            <UBadge v-for="tag in project.tags" :label="tag" :class="[project.textColor, project.bgColor]" />
+          </div>
+        </div>
+      </UPageGrid>
+    </UPageSection>
+  </UPage>
+</template>
+
 <script setup lang="ts">
-interface Banner {
-	title: string;
-	description: string;
-	to: string;
-	class: string;
-	icons: BannerIcons[];
-}
-
-interface BannerIcons {
-	name: string;
-	size: string;
-	classes: string;
-}
-
-const banners = ref<Banner[]>([
-	{
-		title: "Personal Projects",
-		description: "Check at what I'm currently working on and their current status!",
-		to: "/projects",
-		class: "from-violet-600 to-fuchsia-400",
-		icons: [
-			{
-				name: "mdi:database",
-				size: "8em",
-				classes: "-right-8 -bottom-12 -rotate-[25deg]",
-			},
-			{
-				name: "mdi:server",
-				size: "8em",
-				classes: "hidden lg:block left-0 -top-10 rotate-[25deg]",
-			},
-		],
-	},
-	{
-		title: "SkyCast",
-		description:
-			"An elegant, modern, interactive and advanced website template built to display your station's weather data in real time!",
-		to: "/apps/weather",
-		class: "from-blue-800 to-indigo-400",
-		icons: [
-			{
-				name: "line-md:sunny-outline-twotone-loop",
-				size: "8em",
-				classes: "-right-8 -bottom-12 -rotate-[25deg]",
-			},
-			{
-				name: "line-md:moon-twotone-alt-loop",
-				size: "6em",
-				classes: "hidden lg:block left-0 -top-10 rotate-[25deg]",
-			},
-		],
-	},
-]);
-const age = computed(() => {
-	const date = new Date();
-	const birthday = new Date("2002-05-28");
-
-	if (birthday.setUTCFullYear(date.getUTCFullYear()) >= Date.now()) {
-		return date.getUTCFullYear() - 2003;
-	} else {
-		return date.getUTCFullYear() - 2002;
-	}
+useSeoMeta({
+  title: "Home",
 });
 
-useSeoMeta({
-	title: "Home",
+const projects = ref<Project[]>([
+  {
+    title: "Gateway",
+    description: "All the projects I created and contributed in once place!",
+    textColor: "text-orange-950",
+    bgColor: "bg-orange-400",
+    link: "sagris.me",
+    tags: ["Website"],
+  },
+  {
+    title: "Aura",
+    description: "Aura is a feature-rich bot with lots of tools and a modern dashboard!",
+    textColor: "text-black",
+    bgColor: "bg-project-aura",
+    link: "bot.auragroup.dev",
+    tags: ["Discord", "Bot"],
+  },
+  {
+    title: "PagoExpress",
+    description: "PagoExpress is an ice supplier company based in Chania, Crete",
+    textColor: "text-white",
+    bgColor: "bg-project-pagoexpress",
+    link: "pagoexpress.gr",
+    tags: ["Website", "Ice"],
+  },
+  {
+    title: "Pestoverse",
+    description: "The official website for running, upcoming and archived events created by Yuniiho's community",
+    textColor: "text-emerald-950",
+    bgColor: "bg-emerald-400",
+    link: "pestoverse.world",
+    tags: ["Website", "Twitch", "Games"],
+  },
+  {
+    title: "Butler",
+    description:
+      "Butler is a digital ecosystem that offers multiple solutions and new possibilities to mass catering stores",
+    textColor: "text-sky-950",
+    bgColor: "bg-sky-400",
+    link: "butler.gr",
+    tags: ["Website", "Business"],
+  },
+]);
+
+const age = computed(() => {
+  const today = new Date();
+  const birthDate = new Date(2002, 4, 28);
+  let age = today.getFullYear() - birthDate.getFullYear();
+
+  const birthdayThisYear = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (today < birthdayThisYear) {
+    age--;
+  }
+
+  return age;
 });
 </script>
 
-<template>
-	<StructuresFlex :header="true" :column="true" class="gap-2 py-12">
-		<h1 class="text-4xl text-white font-bold">👋 Hello there!</h1>
-		<p class="text-gray-400 text-sm md:text-base font-medium">
-			I’m Lampros or Tougrel (<span class="text-violet-300 italic">
-				<ClientOnly>{{ age }}</ClientOnly> years old</span
-			>) and I’m from Greece. I love programming, gaming, anime and I’m a big fan of J. R. R Tolkien’s work. I'm a
-			fullstack engineer but I spend a lot of time on frontend development! I’m currently working on some
-			projects that you can find below.
-		</p>
-	</StructuresFlex>
-	<StructuresFlex :row="true" :wrap="true" class="gap-4 py-12">
-		<UiBanner
-			v-for="banner in banners"
-			:title="banner.title"
-			:description="banner.description"
-			:to="banner.to"
-			:class="banner.class"
-		>
-			<Icon
-				v-for="icon in banner.icons"
-				:name="icon.name"
-				:size="icon.size"
-				:class="icon.classes"
-				class="absolute mix-blend-multiply text-white"
-			/>
-		</UiBanner>
-	</StructuresFlex>
-</template>
+<script lang="ts">
+interface Project {
+  title: string;
+  description: string;
+  textColor: string;
+  bgColor: string;
+  link: string;
+  tags: string[];
+}
+</script>

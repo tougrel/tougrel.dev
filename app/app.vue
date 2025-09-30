@@ -53,17 +53,12 @@ useHead({
 </script>
 
 <template>
-	<NuxtLoadingIndicator />
-	<UiNav />
-	<main class="px-8 max-w-screen-2xl mx-auto">
-		<NuxtPage />
-	</main>
-	<UiFooter />
+	<UApp :tooltip="{ delayDuration: 300 }">
+		<NuxtLoadingIndicator />
+		<Nav />
+		<UContainer as="main">
+			<NuxtPage />
+		</UContainer>
+		<Footer />
+	</UApp>
 </template>
-
-<style>
-html,
-body {
-	@apply bg-background text-white font-main relative min-w-0;
-}
-</style>
