@@ -16,7 +16,7 @@
 	      <UNavigationMenu :items="routes" />
 	    </template>
 
-		<LazyUModal v-model:open="credits" title="🔥🔨 Forged in the Fires of Code" description="From the forges of the ancient dwarves, great works are built with trusted tools. Here you'll find the stack that powers my own creations!" portal :ui="{ content: 'max-w-screen-md', body: 'grid grid-cols-1 md:grid-cols-2 gap-2' }">
+		<LazyUModal v-model:open="attributions" title="🔥🔨 Forged in the Fires of Code" description="From the forges of the ancient dwarves, great works are built with trusted tools. Here you'll find the stack that powers my own creations!" portal :ui="{ header: 'shrink-0', content: 'max-w-screen-md', body: 'grid grid-cols-1 md:grid-cols-2 gap-2' }">
 			<template #body>
 				<UPageCard title="Nuxt" description="The backbone of my realm, powering the foundation of this site." link="https://nuxt.com" icon="mdi:nuxt" spotlight :ui="{ leadingIcon: 'text-social-nuxt' }" class="[--spotlight-color:var(--color-social-nuxt)]" />
 				<UPageCard title="Nuxt UI" description="Like dwarves carving stone to build their mighty halls, Nuxt UI shapes the interface with precision and craft." link="https://ui.nuxt.com" icon="mdi:palette-outline" spotlight :ui="{ leadingIcon: 'text-stone-600' }" class="[--spotlight-color:var(--color-stone-600)]" />
@@ -45,12 +45,12 @@ const routes: NavigationMenuItem[] = [
 		label: "Attributions",
 		icon: "line-md:heart",
 		onClick: () => {
-			credits.value = true;
+			attributions.value = true;
 		},
 	},
 ];
 
-const credits = ref(false);
+const attributions = ref(false);
 </script>
 
 <script lang="ts">
