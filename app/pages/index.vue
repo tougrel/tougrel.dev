@@ -12,22 +12,22 @@
 
     <UPageSection title="My Projects" description="Check at what I'm currently working on and their current status!">
       <UPageGrid>
-        <div v-for="(project, index) in projects" :key="`project-${index}`"
+        <ULink v-for="(project, index) in projects" :key="`project-${index}`" :to="`https://${project.link}`" target="_blank" external
           class="flex flex-col gap-4 relative ring-2 ring-default rounded-lg p-8 overflow-hidden">
           <div class="absolute top-0 left-0 w-12 h-12 blur-3xl" :class="project.bgColor" />
           <div class="flex flex-col gap-1">
             <h2 class="text-2xl text-white-full font-bold">{{ project.title }}</h2>
-            <ULink :to="`https://${project.link}`" target="_blank" external class="flex items-center gap-1 text-sm">
+            <div class="flex items-center gap-1 text-sm">
               <Icon name="line-md:external-link" size=".8em" class="text-muted" />
-              {{ project.link }}
-            </ULink>
+              <span class="underline">{{ project.link }}</span>
+            </div>
           </div>
           <USeparator size="md" decorative />
           <p class="text-sm text-muted overflow-y-auto">{{ project.description }}</p>
           <div class="flex items-center gap-2 mt-auto">
             <UBadge v-for="tag in project.tags" :label="tag" :class="[project.textColor, project.bgColor]" />
           </div>
-        </div>
+        </ULink>
       </UPageGrid>
     </UPageSection>
   </UPage>
@@ -39,14 +39,6 @@ useSeoMeta({
 });
 
 const projects = ref<Project[]>([
-  {
-    title: "Gateway",
-    description: "All the projects I created and contributed in once place!",
-    textColor: "text-orange-950",
-    bgColor: "bg-orange-400",
-    link: "sagris.me",
-    tags: ["Website"],
-  },
   {
     title: "Aura",
     description: "Aura is a feature-rich bot with lots of tools and a modern dashboard!",
