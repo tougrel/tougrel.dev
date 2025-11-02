@@ -45,4 +45,5 @@ html, body {
 	background-color: var(--ui-bg);
 	color: var(--ui-text);
 	font-family: "JetBrains Mono", monospace, sans-serif;
+	scroll-behavior: smooth;
 }
