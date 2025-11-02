@@ -1,22 +1,31 @@
 <template>
   <UPage>
-    <UPageHero title="🌍 From Middle Earth to Code ✨" headline='Lampros "Tougrel" Sagris'>
-      <template #description>
-        I’m Lampros or Tougrel (<span class="text-primary italic">{{ age || "23" }} years old</span>) and I’m from
-        Greece. I love programming, gaming, anime and I’m a big fan of J. R. R Tolkien’s work. I'm a fullstack
-        engineer but I spend a lot of time on frontend development! I enjoy creating modern, clean and interactive interfaces,
-        usually with Vue and TypeScript and I'm always trying new tools or create projects that never see the light of day just to
-        experiment. I’m currently working on some projects that you can find below!
-      </template>
+    <UPageHero title="🌍 From Middle Earth to Code ✨" headline='Lampros "Tougrel" Sagris' :links="[{ icon: 'line-md:arrow-down', variant: 'ghost', to: '#about', class: 'animate-bounce' }]">
+	    <template #description>
+		    Hello! My name is Lampros and I go by Tougrel online! I'm a fullstack engineer but I spend most of my time
+		    on frontend development.
+	    </template>
     </UPageHero>
 
-    <UPageSection title="My Projects" description="Check at what I'm currently working on and their current status!">
+	  <USeparator decorative />
+
+	  <UPageSection id="about" icon="line-md:compass-loop" title="A little bit about me and my journey!">
+		  <template #description>
+			  I'm <span class="text-primary italic">{{ age || "23" }} years old</span>, from Greece and I love programming, gaming, anime and as you
+			  can probably already tell from the page title I'm a big fan of <ULink href="https://en.wikipedia.org/wiki/J._R._R._Tolkien" target="_blank" external class="underline">J. R. R Tolkien’s</ULink> work.
+			  The programming languages I'm using are mainly JavaScript/TypeScript and Rust but I'm also familiar with Go, Java and Kotlin which I'm not that great compared to my main ones.
+		  </template>
+	  </UPageSection>
+
+	  <USeparator decorative />
+
+    <UPageSection id="projects" icon="line-md:check-list-3" title="My Projects" description="Check at what I'm currently working on and their current status!">
       <UPageGrid>
         <ULink v-for="(project, index) in projects" :key="`project-${index}`" :to="`https://${project.link}`" target="_blank" external
           class="flex flex-col gap-4 relative ring-2 ring-default rounded-lg p-8 overflow-hidden">
           <div class="absolute top-0 left-0 w-12 h-12 blur-3xl" :class="project.bgColor" />
           <div class="flex flex-col gap-1">
-            <h2 class="text-2xl text-white-full font-bold">{{ project.title }}</h2>
+            <h2 class="text-2xl text-white font-bold">{{ project.title }}</h2>
             <div class="flex items-center gap-1 text-sm">
               <Icon name="line-md:external-link" size=".8em" class="text-muted" />
               <span class="underline">{{ project.link }}</span>
